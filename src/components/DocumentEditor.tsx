@@ -414,6 +414,8 @@ export default function DocumentEditor() {
                 width: `${CONTENT_WIDTH_PX}px`,
                 margin: `0 auto`,
                 padding: `${MARGIN_PX}px`,
+                paddingTop: `${MARGIN_PX + 24}px`,
+                paddingBottom: `${MARGIN_PX + 24}px`,
                 // make the editor area at least one page high and force readable text
                 minHeight: `${CONTENT_HEIGHT_PX}px`,
                 color: '#000000',
@@ -424,8 +426,8 @@ export default function DocumentEditor() {
               }}
             >
               {isEditorReady && editor && (
-                <div className="prose text-black" style={{ color: '#000000' }}>
-                  <EditorContent editor={editor} />
+                <div className="prose prose-sm max-w-none" style={{ color: '#000000 !important' }}>
+                  <EditorContent editor={editor} style={{ color: '#000000' }} />
                 </div>
               )}
             </div>

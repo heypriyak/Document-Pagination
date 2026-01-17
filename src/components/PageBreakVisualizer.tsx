@@ -68,6 +68,8 @@ export default function PageBreakVisualizer({
                   fontSize: 12,
                   color: '#374151',
                   pointerEvents: 'none',
+                  zIndex: 100,
+                  fontWeight: 600,
                 }}
               >
                 {headerText}
@@ -85,6 +87,8 @@ export default function PageBreakVisualizer({
                 fontSize: 12,
                 color: '#6B7280',
                 pointerEvents: 'none',
+                zIndex: 100,
+                fontWeight: 600,
               }}
             >
               {footerText 

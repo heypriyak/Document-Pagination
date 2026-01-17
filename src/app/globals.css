@@ -93,12 +93,25 @@ input::placeholder, textarea::placeholder {
 
 /* Tiptap / ProseMirror content */
 .ProseMirror {
-  color: var(--foreground) !important;
+  color: #000000 !important;
   background: transparent;
   min-height: 100px;
 }
 .ProseMirror * {
-  color: inherit !important;
+  color: #000000 !important;
+}
+.ProseMirror p,
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3,
+.ProseMirror h4,
+.ProseMirror h5,
+.ProseMirror h6,
+.ProseMirror li,
+.ProseMirror td,
+.ProseMirror th {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
 }
 
 /* Make text selection readable */
