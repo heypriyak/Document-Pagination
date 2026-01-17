@@ -98,7 +98,7 @@ export default function DocumentEditor() {
       const savedShow = localStorage.getItem(STORAGE_KEY_PAGE_NUMBERS);
 
       if (saved) {
-        editor.commands.setContent(saved, false);
+        editor.commands.setContent(saved, {});
       }
       if (savedHeader !== null) setHeaderText(savedHeader);
       if (savedFooter !== null) setFooterText(savedFooter);
