@@ -24,3 +24,171 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Strong global override: make UI text black so typed text is always visible */
+html, body, #__next {
+  color: #111827 !important;
+}
+
+/* Ensure interactive controls inherit the black color */
+button, input, textarea, select, label {
+  color: #111827 !important;
+}
+
+/* Improve form control contrast */
+input, textarea, select {
+  background: #ffffff !important;
+  border: 1px solid #9ca3af !important;
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+  caret-color: #111827 !important;
+  opacity: 1 !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #6b7280 !important;
+  opacity: 1 !important;
+}
+
+/* Print styles to match US Letter with 1-inch margins */
+@media print {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: rgb(9, 0, 0);
+    color: #000;
+  }
+
+  /* Size for US Letter in inches -> for browsers that support it */
+  @page {
+    size: 8.5in 11in;
+    margin: 1in;
+  }
+
+  /* Ensure the editor content area prints as pages */
+  .mx-auto.bg-white {
+    box-shadow: none !important;
+    width: 6.5in !important; /* content width */
+    min-height: 9in !important; /* content height */
+    margin: 0 auto !important;
+    padding: 1in !important;
+  }
+
+  /* Hide sidebar and controls when printing */
+  .w-64, .mt-4, .InsertTestContent {
+    display: none !important;
+  }
+}
+
+/* Ensure form controls and the editor text are visible across themes */
+input, textarea, select, button {
+  color: var(--foreground) !important;
+  background-color: transparent;
+  caret-color: var(--foreground) !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgba(23,23,23,0.45);
+}
+
+/* Tiptap / ProseMirror content */
+.ProseMirror {
+  color: var(--foreground) !important;
+  background: transparent;
+  min-height: 100px;
+}
+.ProseMirror * {
+  color: inherit !important;
+}
+
+/* Make text selection readable */
+::selection {
+  background: rgba(59,130,246,0.25);
+  color: inherit;
+}
+
+/* Ensure dark-mode doesn't make text light on white paper */
+.mx-auto.bg-white, .mx-auto.bg-white .ProseMirror {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+.mx-auto.bg-white input, .mx-auto.bg-white textarea {
+  color: #111827 !important;
+  caret-color: #111827 !important;
+}
+
+/* Strong override to prevent any parent theme or filter from hiding content */
+.mx-auto.bg-white, .mx-auto.bg-white * {
+  opacity: 1 !important;
+  visibility: visible !important;
+  -webkit-text-fill-color: #111827 !important;
+  color: #111827 !important;
+  mix-blend-mode: normal !important;
+  filter: none !important;
+}
+
+/* Ensure headings and list items inside editor use dark text */
+.mx-auto.bg-white .ProseMirror h1,
+.mx-auto.bg-white .ProseMirror h2,
+.mx-auto.bg-white .ProseMirror h3,
+.mx-auto.bg-white .ProseMirror p,
+.mx-auto.bg-white .ProseMirror li {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+/* Table styling for Tiptap editor */
+.ProseMirror table {
+  border-collapse: collapse;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+.ProseMirror table td,
+.ProseMirror table th {
+  border: 1px solid #ccc;
+  padding: 6px 8px;
+  vertical-align: top;
+  box-sizing: border-box;
+  position: relative;
+  color: #111827 !important;
+}
+
+.ProseMirror table th {
+  background-color: #f3f4f6;
+  font-weight: bold;
+  text-align: left;
+}
+
+.ProseMirror table td > *,
+.ProseMirror table th > * {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.ProseMirror table td.selectedCell {
+  background-color: #bfdbfe;
+}
+
+/* List styling */
+.ProseMirror ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: #111827 !important;
+}
+
+.ProseMirror ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  color: #111827 !important;
+}
+
+.ProseMirror ul li, 
+.ProseMirror ol li {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
